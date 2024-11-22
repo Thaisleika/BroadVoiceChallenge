@@ -1,0 +1,43 @@
+Feature: Create New User
+  I as a user
+  I want to create a new user 
+  So I can interact with the web page
+
+  Scenario: Be redirected to Create New User Page succefully
+    Given I am at Home Page
+    When I click on Create New User button
+    Then I will be redirected to Create User Page
+
+  Scenario: Creating a new user succefully
+    Given I am at Create new user page
+    When I fill in the E-mail field
+    And I fill in the first Name field
+    And I fill in the Last name field
+    And I click on the Save button
+    Then I should see "User created succefully"
+
+  Scenario: Creating a new user with a missing field
+    Given  I am at Create new user page
+    When I leave th e email field empty
+    And I fill in the first Name field
+    And I fill in the Last name field
+    And I click on the Save button
+    Then I should see an error message "e-mail is required"
+
+  Scenario:  Creating a new user with an already registred e-mail
+    Given  I am at Create new user page
+    When I fill in the E-mail field with an existing account
+    And I fill in the first Name field
+    And I fill in the Last name field
+    And I click on the Save button
+    Then I should see an error message "e-mail is already used"
+
+  Scenario:  Creating a new user with a invalid name format
+    Given  I am at Create new user page
+    When I fill in the E-mail field with an existing account
+    And I fill in the first Name field
+    And I fill in the Last name field
+    And I click on the Save button
+    Then I should see an error message "e-mail is already used"  
+
+    
