@@ -1,0 +1,67 @@
+Feature('create new user');
+
+Test Case 1 ('Creating a new user successfuly') 
+
+Preconditions: 'No account exists with the provided email'
+
+Steps: 
+1-Be on Create new user Page
+2-Enter a valid values in the fields
+3-Click on Save button and the message are shown a temporary password was sent, check your e-mail
+
+Expected result:
+A message is displayed 'user created with success' then the user is redirected to Home Page and his name is shown on the header's page
+
+
+
+Test Case 2 ('Creating a new user with a missing field (email') 
+
+Preconditions: 'None'
+
+Steps: 
+1-Be on Create new user Page
+2-leave the e-mail field empty and a valid values in the others fields
+3-Click on Register button
+
+Expected result:
+A error message is displayed 'e-mail is required' 
+
+
+
+Test case 3 (Creating a new user with a invalid format name)
+Preconditions: 'None'
+
+Steps: 
+1-Be on Create new user Page
+2-Fill the field name with a invalid format and  a valid values in the others fields
+3-Click on Save button
+
+Expected result:
+A error message is displayed 'format name is invalid' 
+
+
+
+Test Case 4 ('Creating a new user with email already used') 
+
+Preconditions: 'account with email users registred'
+
+Steps: 
+1-Be on Create new user Page
+2-Enter registred e-mail and  a valid values in the others fields
+3-Click on Save button
+
+Expected result:
+A error message is displayed 'e-mail is already used' 
+
+
+
+Test case 5 ('Performance Test')
+Preconditions: 'user creation multiple requests simultaneously'
+
+Steps: 
+1-Be on Create new user Page
+2-Fill the field with a valid values 
+3-Click on Save button 
+
+Expected result:
+User created within 3 seconds, if not a error should be displayed. 
